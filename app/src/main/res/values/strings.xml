@@ -13,6 +13,7 @@
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="patient_record">My Record</string>
     <string name="title_activity_patient_records">PatientRecords</string>
-    <string name="title_activity_check_in">CheckInActivity</string>
     <string name="title_activity_doctor_screen">DoctorScreen</string>
+    <string name="title_activity_check_in">Checking In</string>
+    <string name="check_in_label">You have been checked in for your doctor\'s appointment. Please wait to be called. </string>
 </resources>
