@@ -1,9 +1,8 @@
 package com.example.drbeacon;
 
 
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -22,17 +21,8 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
-//import com.google.android.gms.appindexing.Action;
-//import com.google.android.gms.appindexing.AppIndex;
-//import com.google.android.gms.appindexing.Thing;
-//import com.google.android.gms.common.api.GoogleApiClient;
-
-//import org.apache.http.HttpResponse;
-//import org.apache.http.client.methods.HttpGet;
-//import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -45,6 +35,14 @@ import java.util.UUID;
 
 import drbeacon.models.Appointment;
 import drbeacon.models.Doctor;
+
+//import com.google.android.gms.appindexing.Action;
+//import com.google.android.gms.appindexing.AppIndex;
+//import com.google.android.gms.appindexing.Thing;
+//import com.google.android.gms.common.api.GoogleApiClient;
+//import org.apache.http.HttpResponse;
+//import org.apache.http.client.methods.HttpGet;
+//import org.apache.http.impl.client.DefaultHttpClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -142,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         region = new Region("ranged region", UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), null, null);
 
         HTTPGet request = new HTTPGet();
-        request.execute(new String[]{"http://10.0.2.2:3000/api/doc"});
+        request.execute(new String[]{"http://10.192.118.246:3000/api/doc"});
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
     }
