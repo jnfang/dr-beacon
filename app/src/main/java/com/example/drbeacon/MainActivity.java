@@ -175,10 +175,16 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Appointment> getUserAppointments() {
         ArrayList<Appointment> results = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
-            Doctor d = new Doctor("Doe");
-            Appointment obj = new Appointment(false,d,"Paris","Cosem");
-            results.add(i, obj);
+        for (int i = 0; i < 7; i++) {
+            if (i% 2 == 0){
+                Doctor d = new Doctor("House");
+                Appointment obj = new Appointment(false,d,"Barcelona","My Second Clinic");
+                results.add(i, obj);
+            } else {
+                Doctor d = new Doctor("Beacon");
+                Appointment obj = new Appointment(false,d,"Barcelona","My Health Clinic");
+                results.add(i, obj);
+            }
         }
 
         return results;
