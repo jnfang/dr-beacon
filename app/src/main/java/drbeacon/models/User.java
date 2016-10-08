@@ -37,15 +37,22 @@ public class User {
     }
 
     public ArrayList<String> getConditionLabels() {
-        return conditionLabels;
+        return TestConditions();
     }
 
     public void setConditionLabels(ArrayList<String> conditionLabels) {
         this.conditionLabels = conditionLabels;
     }
 
+    public User(String firstName, String lastName, Date birthDate, String sex) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.sex = sex;
+    }
+
     public ArrayList<String> getHistoryDescriptions() {
-        return historyDescriptions;
+        return TestHistory();
     }
 
     public void setHistoryDescriptions(ArrayList<String> historyDescriptions) {
