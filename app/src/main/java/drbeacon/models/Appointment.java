@@ -1,7 +1,8 @@
 package drbeacon.models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
@@ -14,11 +15,80 @@ import java.util.TimeZone;
 public class Appointment {
     // get the supported ids for GMT-08:00 (Pacific Standard Time)
     static String[] ids = TimeZone.getAvailableIDs(2 * 60 * 60 * 1000);
+    static int counter=-1;
     private static SimpleTimeZone appTimeZone = new SimpleTimeZone(2 * 60 * 60 * 1000, ids[0]);
-    public Calendar timezone  = new GregorianCalendar(appTimeZone);
-    public Date date;
+    public Calendar time  = new GregorianCalendar(appTimeZone);
     public Doctor doc;
+    public String location;
     public String clinic;
+    public Boolean hasAppointment;
+
+    public Appointment(){
+        time = Calendar.getInstance();
+        time.add(Calendar.DATE, counter);
+        doc = null;
+        location = null;
+        clinic = null;
+        hasAppointment = false;
+        counter-=1;
+    }
+
+    private String getReadableString(Calendar c) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar cal = c;
+        return dateFormat.format(cal.getTime());
+    }
+
+    public Appointment(Boolean input_hasAppointment, Doctor doctor, String input_location, String input_clinic) {
+        this.hasAppointment = input_hasAppointment;
+        this.location = input_location;
+        this.clinic = input_clinic;
+        this.doc = doctor;
+    }
+
+
+    public Boolean isHasAppointment() {
+        return hasAppointment;
+    }
+
+    public void setHasAppointment(Boolean hasAppointment) {
+        this.hasAppointment = hasAppointment;
+    }
+
+
+
+    public String getClinic() {
+        return clinic;
+    }
+
+    public void setClinic(String clinic) {
+        this.clinic = clinic;
+    }
+
+    public Calendar getTime() {
+        return time;
+    }
+
+    public void setTime(Calendar time) {
+        this.time = time;
+    }
+
+    public Doctor getDoc() {
+        return doc;
+    }
+
+    public void setDoc(Doctor doc) {
+        this.doc = doc;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
 
 
 }

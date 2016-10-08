@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="2dp"
+        app:contentPadding="10dp" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/apptLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="St Mary's Surgery, SO14 1PB"
+                android:textSize="18dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/apptTime" />
+
+            <TextView
+                android:id="@+id/apptDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26 Aug"
+                android:layout_alignBaseline="@+id/apptType"
+                android:layout_alignBottom="@+id/apptType"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/apptTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18:00"
+                android:textSize="18dp"
+                android:layout_marginStart="13dp"
+                android:layout_above="@+id/apptLocation"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/apptType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:text="GP Appointment"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/apptTime" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
