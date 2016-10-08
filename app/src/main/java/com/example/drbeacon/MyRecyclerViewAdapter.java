@@ -26,14 +26,14 @@ public class MyRecyclerViewAdapter extends RecyclerView
             implements View
             .OnClickListener {
         TextView apptType;
-        TextView apptDate;
+        TextView apptDoc;
         TextView apptTime;
         TextView apptLocation;
 
         public DataObjectHolder(View itemView) {
             super(itemView);
             apptType = (TextView) itemView.findViewById(R.id.apptType);
-            apptDate = (TextView) itemView.findViewById(R.id.apptDate);
+            apptDoc = (TextView) itemView.findViewById(R.id.apptDoc);
             apptTime = (TextView) itemView.findViewById(R.id.apptTime);
             apptLocation = (TextView) itemView.findViewById(R.id.apptLocation);
             Log.i(LOG_TAG, "Adding Listener");
@@ -70,8 +70,8 @@ public class MyRecyclerViewAdapter extends RecyclerView
         if (current.isHasAppointment()){
 
         }
-
         holder.apptType.setText(R.string.has_appt);
+        holder.apptDoc.setText(current.getDoc().getLastName());
         holder.apptTime.setText(Appointment.getReadableDate(current.getTime()));
         String spacedLocation = current.getLocation().concat(" ");
         String fullLocation = spacedLocation.concat(current.getClinic());

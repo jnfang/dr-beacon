@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Airport</string>
+    <string name="app_name">Dr. Beacon</string>
     <string-array name="drawer_list">
         <item>My Records</item>
         <item>Settings</item>

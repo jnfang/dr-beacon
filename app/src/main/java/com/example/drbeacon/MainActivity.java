@@ -176,9 +176,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Appointment> results = new ArrayList<>();
 
         for (int i = 0; i < 7; i++) {
-            Doctor d = new Doctor("Beacon");
-            Appointment obj = new Appointment(false,d,"Barcelona","My Health Clinic");
-            results.add(i, obj);
+            if (i% 2 == 0){
+                Doctor d = new Doctor("House");
+                Appointment obj = new Appointment(false,d,"Barcelona","My Second Clinic");
+                results.add(i, obj);
+            } else {
+                Doctor d = new Doctor("Beacon");
+                Appointment obj = new Appointment(false,d,"Barcelona","My Health Clinic");
+                results.add(i, obj);
+            }
         }
 
         return results;
