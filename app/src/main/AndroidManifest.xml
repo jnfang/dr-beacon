@@ -28,5 +28,10 @@
             android:name=".PatientRecords"
             android:label="@string/title_activity_patient_records"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".CheckInActivity"
+            android:label="@string/title_activity_check_in"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
+
 </manifest>

@@ -27,7 +27,7 @@ public class BeaconMonitorActivity extends Application {
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 showNotification(
-                        "Checking you in to your doctor's appointment",
+                        "Check in to your appointment",
                         "Please wait until your are called");
             }
             @Override
@@ -52,7 +52,7 @@ public class BeaconMonitorActivity extends Application {
         PendingIntent pendingIntent = PendingIntent.getActivities(this, 0,
                 new Intent[]{notifyIntent}, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification notification = new Notification.Builder(this)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setSmallIcon(android.R.drawable.star_off)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setAutoCancel(true)
