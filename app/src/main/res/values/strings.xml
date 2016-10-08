@@ -14,4 +14,5 @@
     <string name="patient_record">My Record</string>
     <string name="title_activity_patient_records">PatientRecords</string>
     <string name="title_activity_check_in">CheckInActivity</string>
+    <string name="title_activity_doctor_screen">DoctorScreen</string>
 </resources>
