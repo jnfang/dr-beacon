@@ -1,5 +1,7 @@
 package drbeacon.models;
 
+import android.util.Log;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,19 +27,21 @@ public class Appointment {
 
     public Appointment(){
         time = Calendar.getInstance();
-        time.add(Calendar.DATE, counter);
+        time.add(Calendar.DATE, Appointment.counter);
         doc = null;
         location = null;
         clinic = null;
-        hasAppointment = false;
-        counter-=1;
+        hasAppointment = true;
+        Appointment.counter-=1;
+        Log.e("Beacon COUNTER IS", String.valueOf(Appointment.counter));
     }
 
-    public static String getReadableString(Calendar c) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    public static String getReadableDate(Calendar c) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/dd/MM HH:mm:ss");
         Calendar cal = c;
         return dateFormat.format(cal.getTime());
     }
+
 
     public Appointment(Boolean input_hasAppointment, Doctor doctor, String input_location, String input_clinic) {
         this.hasAppointment = input_hasAppointment;
