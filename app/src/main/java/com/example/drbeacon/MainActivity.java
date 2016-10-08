@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import drbeacon.models.Appointment;
+import drbeacon.models.Doctor;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -175,8 +176,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Appointment> results = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-
-            Appointment obj = new Appointment();
+            Doctor d = new Doctor("Doe");
+            Appointment obj = new Appointment(false,d,"Paris","Cosem");
             results.add(i, obj);
         }
 

@@ -33,7 +33,7 @@ public class Appointment {
         counter-=1;
     }
 
-    private String getReadableString(Calendar c) {
+    public static String getReadableString(Calendar c) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Calendar cal = c;
         return dateFormat.format(cal.getTime());

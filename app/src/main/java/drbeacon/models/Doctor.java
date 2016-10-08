@@ -18,7 +18,7 @@ public class Doctor {
     public Doctor(String inputlastName) {
         firstName = "Jane";
         lastName = inputlastName;
-        room = "123";
+        room = "A5E123";
         education = "Harvard Medical School";
 //        profile = R.drawable.ic_android_doctor;
 

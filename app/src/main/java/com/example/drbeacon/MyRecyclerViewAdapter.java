@@ -67,9 +67,8 @@ public class MyRecyclerViewAdapter extends RecyclerView
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
         holder.apptType.setText(mDataset.get(position).isHasAppointment().toString());
-        holder.apptDate.setText(mDataset.get(position).getDate().toString());
+        holder.apptDate.setText(Appointment.getReadableString(mDataset.get(position).getTime()));
         holder.apptTime.setText(mDataset.get(position).getTime().toString());
-        // TODO: format in readable time
         holder.apptLocation.setText(mDataset.get(position).getLocation());
     }
 
