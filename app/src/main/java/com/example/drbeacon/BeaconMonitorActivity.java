@@ -32,7 +32,9 @@ public class BeaconMonitorActivity extends Application {
             }
             @Override
             public void onExitedRegion(Region region) {
-                // could add an "exit" notification too if you want (-:
+                showNotification(
+                        "Thank you",
+                        "Hope you have a happy and healthy day!");
             }
         });
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {

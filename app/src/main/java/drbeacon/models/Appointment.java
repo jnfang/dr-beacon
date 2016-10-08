@@ -50,7 +50,6 @@ public class Appointment {
         this.clinic = input_clinic;
         this.doc = doctor;
         Appointment.counter+=5;
-        Log.e("Beacon COUNTER IS", String.valueOf(Appointment.counter));
 
     }
 
