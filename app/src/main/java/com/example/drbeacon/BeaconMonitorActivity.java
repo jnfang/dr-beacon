@@ -49,6 +49,10 @@ public class BeaconMonitorActivity extends Application {
     public void showNotification(String title, String message) {
         Intent notifyIntent = new Intent(this, MainActivity.class);
         notifyIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        notifyIntent.putExtra("clinic", "Gaudi Medical Clinic");
+        notifyIntent.putExtra("doctor", "Doctor Jane Beacon");
+        notifyIntent.putExtra("location", "Carrer de Mallorca, 401, 08013 Barcelona");
+
         PendingIntent pendingIntent = PendingIntent.getActivities(this, 0,
                 new Intent[]{notifyIntent}, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification notification = new Notification.Builder(this)
