@@ -1,4 +1,4 @@
-package com.example.airport;
+package com.example.drbeacon;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,13 +26,8 @@ public class MainActivity extends AppCompatActivity {
     static {
         Map<String, List<String>> placesByBeacons = new HashMap<>();
         placesByBeacons.put("15230:7552", new ArrayList<String>() {{
-            add("Heavenly Sandwiches");
-            // read as: "Heavenly Sandwiches" is closest
-            // to the beacon with major 22504 and minor 48827
-            add("Green & Green Salads");
-            // "Green & Green Salads" is the next closest
-            add("Mini Panini");
-            // "Mini Panini" is the furthest away
+            add("Dr Beacon");
+            // read as: "Dr Beacon" is closest
         }});
         PLACES_BY_BEACONS = Collections.unmodifiableMap(placesByBeacons);
     }
@@ -59,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
             public void onBeaconsDiscovered(Region region, List<Beacon> list) {
                 if (!list.isEmpty()) {
                     Beacon nearestBeacon = list.get(0);
-                    Log.e("Airport", "Nearest beacon: " + nearestBeacon.toString());
+                    Log.e("Dr Beacon", "Nearest beacon: " + nearestBeacon.toString());
 
                     List<String> places = placesNearBeacon(nearestBeacon);
                     // TODO: update the UI here
-                    Log.e("Airport", "Nearest places: " + places);
+                    Log.e("Dr Beacon", "Nearest places: " + places);
                 }
             }
         });

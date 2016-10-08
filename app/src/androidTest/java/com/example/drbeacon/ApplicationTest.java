@@ -1,4 +1,4 @@
-package com.example.airport;
+package com.example.drbeacon;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
