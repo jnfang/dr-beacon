@@ -147,24 +147,24 @@ public class MainActivity extends AppCompatActivity {
 //        request.execute(new String[]{"http://10.192.118.246:3000/api/doc"}).get;
 
 
-        JSONObject obj = null;
-
-        try {
-            obj = new JSONObject(new HTTPGet().execute(new String[]{"http://10.192.118.246:3000/api/doc"}).get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            String docName = obj.getString("doctor");
-            Log.d("oncreate", "" + docName);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+//        JSONObject obj = null;
+//
+//        try {
+//            obj = new JSONObject(new HTTPGet().execute(new String[]{"http://10.192.118.246:3000/api/doc"}).get());
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            String docName = obj.getString("doctor");
+//            Log.d("oncreate", "" + docName);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
         Intent intent = new Intent(MainActivity.this,
                 CheckInActivity.class);
@@ -173,41 +173,6 @@ public class MainActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
     }
-
-//    private class HTTPGet extends AsyncTask<String, String, String> {
-//        @Override
-//        protected String doInBackground(String... urls) {
-//            String response = "";
-//            for (String url : urls) {
-//
-//                DefaultHttpClient client = new DefaultHttpClient();
-//                HttpGet httpGet = new HttpGet(url);
-//                try {
-//                    HttpResponse execute = client.execute(httpGet);
-//                    InputStream content = execute.getEntity().getContent();
-//
-//                    BufferedReader buffer = new BufferedReader(new InputStreamReader(content));
-//                    String line;
-//                    while ((line = buffer.readLine()) != null) {
-//                        response += line;
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//            Log.e("rest", response);
-//
-//            return response;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result) {
-//            Log.e("rest", result);
-//
-//            super.onPostExecute(result);
-//        }
-//    }
 
     @Override
     protected void onResume() {
