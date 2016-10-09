@@ -21,6 +21,7 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.example.utils.HTTPGet;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -141,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
 
         HTTPGet request = new HTTPGet();
         request.execute(new String[]{"http://10.192.118.246:3000/api/doc"});
+
+        Intent intent = new Intent(MainActivity.this,
+                CheckInActivity.class);
+        startActivity(intent);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
     }
@@ -179,52 +184,6 @@ public class MainActivity extends AppCompatActivity {
 //            super.onPostExecute(result);
 //        }
 //    }
-
-    private class HTTPGet extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... urls) {
-            String response = "";
-
-            URL url;
-            HttpURLConnection urlConnection = null;
-
-            try {
-                url = new URL(urls[0]);
-                Log.d("rest", "" + url);
-
-                urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-
-                int responseCode = urlConnection.getResponseCode();
-                Log.d("rest", "" + responseCode);
-                if (responseCode == HttpURLConnection.HTTP_OK){
-
-                    BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                    String line;
-                    while ((line = rd.readLine()) != null) {
-                        response += line;
-                    }
-//                    response = readStream(urlConnection.getInputStream());
-                    Log.d("rest", response);
-                }
-            }
-            catch (Exception e){
-                Log.e("rest", e.toString());
-            }
-
-//            Log.d("rest", response);
-
-            return response;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-//            Log.d("rest", result);
-
-            super.onPostExecute(result);
-        }
-    }
 
     @Override
     protected void onResume() {

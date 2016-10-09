@@ -29,6 +29,17 @@ public class BeaconMonitorActivity extends Application {
                 showNotification(
                         "Check in to your appointment",
                         "Please wait until your are called");
+
+                Intent intent = new Intent(BeaconMonitorActivity.this,
+                        CheckInActivity.class);
+                startActivity(intent);
+                try {
+                    Thread.sleep(5000);
+                }
+                catch (InterruptedException e) {}
+
+                intent = new Intent(BeaconMonitorActivity.this,
+                        DoctorScreen.class);
             }
             @Override
             public void onExitedRegion(Region region) {
@@ -67,4 +78,6 @@ public class BeaconMonitorActivity extends Application {
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(1, notification);
     }
+
+
 }
