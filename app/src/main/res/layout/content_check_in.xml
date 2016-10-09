@@ -25,7 +25,7 @@
          />
 
     <TextView
-        android:text="Queue info"
+        android:text="Queue size"
         android:layout_width="wrap_content"
         android:textSize="8pt"
         android:layout_height="wrap_content"
@@ -43,5 +43,18 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/queue_size_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="[placeholder]"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
+
 
 </RelativeLayout>
