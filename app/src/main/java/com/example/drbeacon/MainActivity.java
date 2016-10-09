@@ -149,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
 
         JSONObject obj = null;
 
-        String output = "";
         try {
             obj = new JSONObject(new HTTPGet().execute(new String[]{"http://10.192.118.246:3000/api/doc"}).get());
         } catch (InterruptedException e) {

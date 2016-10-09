@@ -10,6 +10,7 @@ import android.content.Intent;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
+import com.example.utils.HTTPGet;
 
 import java.util.List;
 import java.util.UUID;
@@ -46,6 +47,8 @@ public class BeaconMonitorActivity extends Application {
                 showNotification(
                         "Thank you",
                         "Hope you have a happy and healthy day!");
+
+                new HTTPGet().execute("http://10.192.118.246:3000/api/dequeue");
             }
         });
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {

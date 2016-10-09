@@ -8,9 +8,15 @@ import android.widget.TextView;
 
 import com.example.utils.HTTPGet;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.concurrent.ExecutionException;
 
 public class CheckInActivity extends AppCompatActivity {
+
+    private TextView mTextView;
+    private JSONObject obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +27,22 @@ public class CheckInActivity extends AppCompatActivity {
 
         HTTPGet request = new HTTPGet();
 
+        mTextView = (TextView) findViewById(R.id.queue_size_label);
+
+        String result = "";
+
         try {
-            String result = new HTTPGet().execute("http://10.192.118.246:3000/api/enqueue").get();
-            Log.d("Result", result);
-            TextView mTextView = (TextView) findViewById(R.id.queue_size_label);
-            mTextView.setText(result);
-        }
-        catch (java.lang.InterruptedException e){
-            Log.e("Error", e.getMessage());
-        }
-        catch (java.util.concurrent.ExecutionException e) {
-            Log.e("Error", e.getMessage());
+            obj = new JSONObject(new HTTPGet().execute(new String[]{"http://10.192.118.246:3000/api/enqueue"}).get());
+            result = obj.getString("queue");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
+        mTextView.setText(result);
     }
 
 //    @Override
