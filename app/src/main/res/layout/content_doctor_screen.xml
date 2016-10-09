@@ -13,4 +13,53 @@
     tools:context="com.example.drbeacon.DoctorScreen"
     tools:showIn="@layout/doctor_screen">
 
+    <TextView
+        android:text="@string/room_label"
+        android:layout_width="wrap_content"
+        android:textSize="8pt"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/lbl_doctor_name"
+        android:layout_marginTop="50dp" />
+
+    <ImageView
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        app:srcCompat="@drawable/house_circle"
+        android:layout_marginTop="75dp"
+        android:id="@+id/img_house"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/lbl_doctor"
+        android:text="@string/doctor_label"
+        android:textSize="10pt"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/lbl_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="[placeholder]"
+        android:layout_below="@+id/lbl_doctor"/>
+
+    <Button
+        android:text="OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/btn_ok" />
 </RelativeLayout>

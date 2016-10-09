@@ -25,16 +25,6 @@
          />
 
     <TextView
-        android:id="@+id/check_in_label"
-        android:text= "@string/check_in_label"
-        android:textSize="10pt"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:text="Queue info"
         android:layout_width="wrap_content"
         android:textSize="8pt"
@@ -43,5 +33,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:id="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/check_in_label"
+        android:text= "@string/check_in_label"
+        android:textSize="10pt"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

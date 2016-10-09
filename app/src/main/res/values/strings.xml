@@ -16,4 +16,6 @@
     <string name="title_activity_doctor_screen">DoctorScreen</string>
     <string name="title_activity_check_in">Checking In</string>
     <string name="check_in_label">You have been checked in for your doctor\'s appointment. Please wait to be called. </string>
+    <string name="doctor_label">You have been assigned to:</string>
+    <string name="room_label">Please go to Room 02A/2011</string>
 </resources>
