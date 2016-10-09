@@ -32,6 +32,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+
+import org.json.*;
 
 import drbeacon.models.Appointment;
 import drbeacon.models.Doctor;
@@ -139,8 +142,30 @@ public class MainActivity extends AppCompatActivity {
         });
         region = new Region("ranged region", UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), null, null);
 
-        HTTPGet request = new HTTPGet();
-        request.execute(new String[]{"http://10.192.118.246:3000/api/doc"});
+//        HTTPGet request = new HTTPGet();
+//        request.execute(new String[]{"http://10.192.118.246:3000/api/doc"}).get;
+
+
+        JSONObject obj = null;
+
+        String output = "";
+        try {
+            obj = new JSONObject(new HTTPGet().execute(new String[]{"http://10.192.118.246:3000/api/doc"}).get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            String docName = obj.getString("doctor");
+            Log.d("oncreate", "" + docName);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
     }
